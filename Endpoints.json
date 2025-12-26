@@ -1,0 +1,174 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Módulo predeterminado",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [],
+  "paths": {
+    "/libros": {
+      "post": {
+        "summary": "Crear libro",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "id": 10,
+                "isbn": "978-1234567890",
+                "titulo": "El Psicoanalista",
+                "autor": "John Katzenbach",
+                "anioPublicacion": 2002,
+                "disponible": true
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "id": 10,
+                  "isbn": "978-1234567890",
+                  "titulo": "El Psicoanalista",
+                  "autor": "John Katzenbach",
+                  "anioPublicacion": 2002,
+                  "disponible": true
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      },
+      "get": {
+        "summary": "Listar todos los libros",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "isbn": "978-3",
+                    "titulo": "Cien años de soledad",
+                    "autor": "García Márquez",
+                    "anioPublicacion": 1967,
+                    "disponible": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/libros/buscar": {
+      "get": {
+        "summary": "Buscar por filtro",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "autor",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "example": "García Márquez",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": [
+                  {
+                    "id": 1,
+                    "isbn": "978-3",
+                    "titulo": "Cien años de soledad",
+                    "autor": "García Márquez",
+                    "anioPublicacion": 1967,
+                    "disponible": true
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/libros/1": {
+      "get": {
+        "summary": "Buscar por ID",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "id": 1,
+                  "isbn": "978-3",
+                  "titulo": "Cien años de soledad",
+                  "autor": "García Márquez",
+                  "anioPublicacion": 1967,
+                  "disponible": true
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
+}
